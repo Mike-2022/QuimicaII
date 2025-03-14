@@ -42,8 +42,11 @@
     </div>
     <div class="container" style="border-width: 2px;border-style: solid;">
         <p style="text-align: justify;padding: 15px;"><span class="text-bg-primary d-flex" style="font-weight: bold;padding-left: 10px;padding-right: 10px;font-family: 'Bruno Ace', cursive;border: 6px inset var(--bs-teal) ;" data-pgc="Cabecera 1" data-pgc-field="Contenido">TITULO PRINCIPAL</span><br><span class="d-flex" style="font-weight: bold;font-family: 'Bruno Ace', cursive;border: 6px none var(--bs-teal);color: #0cb508;" data-pgc="Cabecera 1" data-pgc-field="Contenido">Titulo secundario</span><br><span class="d-flex" style="font-weight: bold;border: 6px none var(--bs-teal);color: #ab00d6;font-family: Aldrich, sans-serif;" data-pgc="Cabecera 1" data-pgc-field="Contenido">Titulo terciario</span><br><br><script>
-      
-      ChemDoodle.io.file.content('/assets/molecules/pyridine.mol', function(fileContent) {
+       function alertMolecule(mol) {
+        let message = 'This molecule contains ' + mol.atoms.length + ' atoms and ' + mol.bonds.length + ' bonds.';
+        alert(message);
+    }
+    ChemDoodle.io.file.content('/assets/molecules/pyridine.mol', function(fileContent) {
         let mol = ChemDoodle.readMOL(fileContent);
         alertMolecule(mol);
     });
